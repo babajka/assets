@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // https://github.com/smooth-code/svgr
 
-const Logo = props => (
-  <svg width={400} height={400} {...props}>
+const Logo = ({ size, ...props }) => (
+  <svg width={size} height={size} viewBox="0 0 400 400" {...props}>
     <defs>
       <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="logo_svg__a">
         <stop stopColor="#13937E" offset="0%" />
@@ -19,5 +20,9 @@ const Logo = props => (
     />
   </svg>
 );
+
+Logo.propTypes = {
+  size: PropTypes.number.isRequired,
+};
 
 export default Logo;
