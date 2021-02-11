@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 // https://github.com/smooth-code/svgr
 
-const Logo = ({ size, ...props }) => (
+const Logo = ({ size, color, ...props }) => (
   <svg width={size} height={size} viewBox="0 0 400 400" {...props}>
     <defs>
       <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="logo_svg__a">
-        <stop stopColor="#13937E" offset="0%" />
-        <stop stopColor="#2B8D7C" offset="49.177%" />
-        <stop stopColor="#182B1C" offset="100%" />
+        <stop stopColor={color || '#13937E'} offset="0%" />
+        <stop stopColor={color || '#2B8D7C'} offset="49.177%" />
+        <stop stopColor={color || '#182B1C'} offset="100%" />
       </linearGradient>
     </defs>
     <path
